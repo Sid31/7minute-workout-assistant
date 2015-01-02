@@ -1,6 +1,4 @@
-angularModule.controller('SettingsCtrl', function($scope, $mdDialog, routines) {
-
-    angular.element(".settings-view").
+app.controller('SettingsCtrl', function($scope, $mdDialog, routines) {
 
     $scope.click = function () {
         $mdDialog.show(

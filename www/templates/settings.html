@@ -1,8 +1,8 @@
-<div ng-controller="SettingsCtrl" layout="column" layout-fill>
-    <md-toolbar class="md-whiteframe-z1">
+<div ng-controller="SettingsCtrl" layout="column" class="settings-view">
+    <md-toolbar class="md-whiteframe-z1" >
         <h1 class="md-toolbar-tools">
             <a href="#/">
-                <md-button class="back-button" >
+                <md-button class="back-button" aria-label="back">
                     <i class="fa fa-2x fa-arrow-left"></i>
                 </md-button>
             </a>
@@ -10,7 +10,8 @@
             <div flex></div>
         </h1>
     </md-toolbar>
-    <md-content class="settings-view">
+
+    <md-content class="settings-list">
         <md-card ng-repeat="routine in routines" class="routine-item" >
             <div class="routine-caption">{{routine.name}}</div>
             <div layout>
@@ -19,7 +20,7 @@
                            ng-model="routine.time"
                            step="1" min="15" max="90"
                            class="routine-slider"
-                           aria-label="rating">
+                           aria-label="duration">
                 </md-slider>
             </div>
 
@@ -29,7 +30,7 @@
                            ng-model="routine.pause"
                            step="1" min="1" max="20"
                            class="routine-slider"
-                           aria-label="rating">
+                           aria-label="break">
                 </md-slider>
             </div>
         </md-card>

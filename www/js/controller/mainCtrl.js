@@ -1,4 +1,4 @@
-angularModule.controller('MainCtrl', function($scope, $mdDialog, routines) {
+app.controller('MainCtrl', function($scope, $mdDialog, routines) {
     $scope.click = function() {
         $mdDialog.show(
             $mdDialog.alert()

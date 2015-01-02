@@ -1,5 +1,5 @@
-<md-content ng-controller="MainCtrl" class="main-view">
-    <md-toolbar>
+<div ng-controller="MainCtrl" class="main-view" layout="column">
+    <md-toolbar class="md-whiteframe-z1">
         <h1 class="md-toolbar-tools">
             <span>Workout Trainer</span>
             <div flex></div>
@@ -12,24 +12,26 @@
         </h1>
     </md-toolbar>
 
-    <br><br>
-    <md-button ng-click="startWorkout()" id="start-workout-button" class="md-fab md-primary">
-        Start<br>Workout
-    </md-button>
+    <md-content>
+        <br><br>
+        <md-button ng-click="startWorkout()" id="start-workout-button" class="md-fab md-primary">
+            Start<br>Workout
+        </md-button>
 
-    <br>
+        <br>
 
-    <div class="routines-list-container">
-        <md-card class="routines-list">
-            <div class="workout-plan-caption">Workout Plan</div>
-            <div class="routine-item" ng-repeat="routine in routines" flex>
-                <div class="routine-name">
-                    {{$index+1}}. {{routine.name}}
-                </div> {{routine.time}} Sek.
-            </div>
-            <md-divider></md-divider><br>
-            <div class="routine-name">Gesamtzeit</div>
-            <span><b>{{overallTime(routines)}} Minuten</b></span>
-        </md-card>
-    </div>
-</md-content>
+        <div class="routines-list-container">
+            <md-card class="routines-list">
+                <div class="workout-plan-caption">Workout Plan</div>
+                <div class="routine-item" ng-repeat="routine in routines" flex>
+                    <div class="routine-name">
+                        {{$index+1}}. {{routine.name}}
+                    </div> {{routine.time}} Sek.
+                </div>
+                <md-divider></md-divider><br>
+                <div class="routine-name">Gesamtzeit</div>
+                <span><b>{{overallTime(routines)}} Minuten</b></span>
+            </md-card>
+        </div>
+    </md-content>
+</div>

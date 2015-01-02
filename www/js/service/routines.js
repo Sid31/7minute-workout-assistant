@@ -1,4 +1,4 @@
-angularModule.factory('routines', function() {
+app.factory('routines', function() {
     return [
         { name: "Hampelmann", time: 35, pause: 10 },
         { name: "Wandsitzen", time: 30, pause: 10 },
