@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta name="format-detection" content="telephone=no" />
+        <meta name="msapplication-tap-highlight" content="no" />
+        <!-- WARNING: for iOS 7, remove the width=device-width and height=device-height attributes. See https://issues.apache.org/jira/browse/CB-4323 -->
+        <meta name="viewport" content="user-scalable=no, initial-scale=1, maximum-scale=1, minimum-scale=1, width=device-width, height=device-height, target-densitydpi=device-dpi" />
+
+        <!--<link rel="stylesheet" href="css/index.css" type="text/css" />-->
+        <link rel="stylesheet" href="lib/angular-material/angular-material.min.css" type="text/css" />
+        <link rel="stylesheet" href="lib/font-awesome/css/font-awesome.min.css" type="text/css" />
+        <link rel="stylesheet" href="css/main.css" type="text/css" />
+        <link rel="stylesheet" href="css/settings.css" type="text/css" />
+
+        <script src="lib/hammerjs/hammer.min.js" type="text/javascript"></script>
+        <script src="lib/angular/angular.js" type="text/javascript"></script>
+        <script src="lib/angular-route/angular-route.min.js" type="text/javascript"></script>
+        <script src="lib/angular-animate/angular-animate.min.js" type="text/javascript"></script>
+        <script src="lib/angular-aria/angular-aria.min.js" type="text/javascript"></script>
+        <script src="lib/angular-material/angular-material.min.js" type="text/javascript"></script>
+
+        <title>Hello World</title>
+    </head>
+    <body ng-app="MyApp">
+        <div ng-view></div>
+
+        <script type="text/javascript" src="cordova.js"></script>
+        <script type="text/javascript" src="js/index.js"></script>
+
+        <script type="text/javascript">
+            var angularModule = angular.module('MyApp', ["ngRoute", "ngMaterial"]);
+            angularModule.config(function($routeProvider, $locationProvider) {
+                $routeProvider
+                    .when('/settings', {
+                        templateUrl: 'templates/settings.html',
+                        controller: 'SettingsCtrl'
+                    })
+                    .when('/', {
+                        templateUrl: 'templates/main.html',
+                        controller: 'MainCtrl'
+                    });
+            });
+        </script>
+        <script src="js/service/routines.js" type="text/javascript"></script>
+        <script src="js/controller/mainCtrl.js" type="text/javascript"></script>
+        <script src="js/controller/settingsCtrl.js" type="text/javascript"></script>
+    </body>
+</html>

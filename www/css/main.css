@@ -1,0 +1,43 @@
+.main-view .settings-button {
+    height: 80%;
+    width: 3.1em;
+    margin-right: 0px;
+}
+
+.main-view #start-workout-button {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    height: 40vmin;
+    width: 40vmin;
+    font-size: 4.3vmin;
+}
+
+.main-view .workout-plan-caption {
+    font-size: 1.5em;
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.main-view .routines-list-container {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    max-width: 1110px;
+}
+
+.main-view .routines-list {
+    max-width: 1100px;
+    font-size: 1.1em;
+}
+
+.main-view .routine-item {
+    width: 320px;
+    height: 30px;
+    display: inline-block;
+
+}
+.main-view .routine-name {
+    width: 200px;
+    display: inline-block;
+}

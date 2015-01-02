@@ -1,0 +1,35 @@
+<md-content ng-controller="MainCtrl" class="main-view">
+    <md-toolbar>
+        <h1 class="md-toolbar-tools">
+            <span>Workout Trainer</span>
+            <div flex></div>
+
+            <a href="#settings">
+                <md-button class="settings-button" >
+                    <i class="fa fa-2x fa-cog"></i>
+                </md-button>
+            </a>
+        </h1>
+    </md-toolbar>
+
+    <br><br>
+    <md-button ng-click="startWorkout()" id="start-workout-button" class="md-fab md-primary">
+        Start<br>Workout
+    </md-button>
+
+    <br>
+
+    <div class="routines-list-container">
+        <md-card class="routines-list">
+            <div class="workout-plan-caption">Workout Plan</div>
+            <div class="routine-item" ng-repeat="routine in routines" flex>
+                <div class="routine-name">
+                    {{$index+1}}. {{routine.name}}
+                </div> {{routine.time}} Sek.
+            </div>
+            <md-divider></md-divider><br>
+            <div class="routine-name">Gesamtzeit</div>
+            <span><b>{{overallTime(routines)}} Minuten</b></span>
+        </md-card>
+    </div>
+</md-content>
