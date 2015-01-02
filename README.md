@@ -13,6 +13,7 @@ It is still under heavy development and not ready to use!
 
 #### Roadmap:
  * Routines are anounced via TTS
+ * Utilize LocalStorage to persist settings
  * Multi language support
  * Add Advertisment
  * Make available on PlayStore
