@@ -1,4 +1,11 @@
-app.controller('SettingsCtrl', function($scope, $mdDialog, routines) {
+app.controller('SettingsCtrl', function($scope, $mdDialog, routines, navigation) {
+
+    navigation.viewName = "settings-view";
+    navigation.headline = "Einstellungen";
+    navigation.rightIcon = "";
+    navigation.rightLink = "";
+    navigation.leftLink = "#/";
+    navigation.leftIcon = "fa fa-2x fa-arrow-left";
 
     $scope.click = function () {
         $mdDialog.show(

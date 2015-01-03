@@ -1,4 +1,12 @@
-app.controller('MainCtrl', function($scope, $mdDialog, routines) {
+app.controller('MainCtrl', function($scope, $mdDialog, routines, navigation) {
+
+    navigation.viewName = "main-view"
+    navigation.headline = "7Minute Workout Assistant";
+    navigation.rightLink = "#/settings";
+    navigation.rightIcon = "fa fa-2x fa-cog";
+    navigation.leftLink = "";
+    navigation.leftIcon = "";
+
     $scope.click = function() {
         $mdDialog.show(
             $mdDialog.alert()
