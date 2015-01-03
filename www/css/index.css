@@ -18,6 +18,17 @@ body {
     */
 }
 
+.toolbar .navigation-button {
+    height: 3.6em;
+    width: 3.4em;
+}
+.toolbar .menu-button {
+    margin-right: 0;
+}
+.toolbar .back-button {
+    margin-left: -10px;
+}
+
 .view {
 
 }

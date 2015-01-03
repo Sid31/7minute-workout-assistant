@@ -23,18 +23,18 @@
         <title>7Minute Workout Assistant</title>
     </head>
     <body ng-app="MyApp" ng-controller="NavigationCtrl" layout="column">
-        <md-toolbar class="md-whiteframe-z1">
+        <md-toolbar class="toolbar md-whiteframe-z1">
             <h1 class="md-toolbar-tools">
                 <a href="{{navigation.leftLink}}" ng-show="navigation.leftLink">
-                    <md-button class="back-button" aria-label="back">
+                    <md-button class="back-button navigation-button" aria-label="back">
                         <i class="{{navigation.leftIcon}}"></i>
                     </md-button>
                 </a>
                 <span>{{navigation.headline}}</span>
-                <div flex></div>
 
-                <a href="{{navigation.rightLink}}" ng-show="navigation.rightLink">
-                    <md-button class="settings-button" >
+                <div flex></div>
+                <a href="{{navigation.rightLink}}" ng-show="navigation.rightLink" >
+                    <md-button class="menu-button navigation-button" aria-label="back">
                         <li class="{{navigation.rightIcon}}"></li>
                     </md-button>
                 </a>
