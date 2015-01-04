@@ -29,5 +29,25 @@ var app = {
         console.log('Received Event: ' + id);
     }
 };
-
 app.initialize();
+
+var app = angular.module('MyApp', ["ngRoute", "ngMaterial"]);
+app.config(function($routeProvider, $locationProvider) {
+    $routeProvider
+        .when('/settings', {
+            templateUrl: 'templates/settings.html',
+            controller: 'SettingsCtrl'
+        })
+        .when('/settings/allRoutineTimes', {
+            templateUrl: 'templates/settings-allRoutineTimes.html',
+            controller: 'AllRoutineTimesCtrl'
+        })
+        .when('/settings/individualRoutineTimes', {
+            templateUrl: 'templates/settings-individualRoutineTimes.html',
+            controller: 'IndividualRoutineTimesCtrl'
+        })
+        .when('/', {
+            templateUrl: 'templates/main.html',
+            controller: 'MainCtrl'
+        });
+});

@@ -1,18 +1,14 @@
 app.controller('MainCtrl', function($scope, $mdDialog, routines, navigation) {
-
-    navigation.viewName = "main-view"
-    navigation.headline = "7Minute Workout Assistant";
+    navigation.initialize("main-view", "7Minute Workout Assistant");
     navigation.rightLink = "#/settings";
     navigation.rightIcon = "fa fa-2x fa-cog";
-    navigation.leftLink = "";
-    navigation.leftIcon = "";
 
     $scope.routines = routines;
 
     $scope.startWorkout = function() {
         $mdDialog.show(
             $mdDialog.alert()
-                .content('Flap your Wings now')
+                .content('Flap your <b>Wings</b> now')
                 .ok('Los Gehts!')
         );
     };

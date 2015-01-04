@@ -5,6 +5,14 @@ app.factory('navigation', function() {
         leftLink: "",
         leftIcon: "",
         rightLink: "",
-        rightIcon: ""
+        rightIcon: "",
+        initialize: function(viewName, headline) {
+            this.viewName = viewName || this.viewName;
+            this.headline = headline || this.headline;
+            this.rightIcon = "";
+            this.rightLink = "";
+            this.leftIcon = "";
+            this.leftLink = "";
+        }
     };
 });

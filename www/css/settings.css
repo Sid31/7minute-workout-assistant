@@ -2,6 +2,10 @@
 
 }
 
+.settings-view .settings-icon {
+    margin: 18px;
+}
+
 .settings-view .routine-caption {
     font-size: 1.3em;
     font-weight: bold;

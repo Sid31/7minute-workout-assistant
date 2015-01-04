@@ -1,0 +1,25 @@
+<div ng-controller="IndividualRoutineTimesCtrl" layout="column">
+    Wollen sie individuelle Zeiten benutzen?
+    <md-card ng-repeat="routine in routines" class="routine-item" >
+        <div class="routine-caption">{{routine.name}}</div>
+        <div layout>
+            <div class="routine-label">Dauer: {{routine.time}} Sek.</div>
+            <md-slider flex
+                       ng-model="routine.time"
+                       step="1" min="15" max="90"
+                       class="routine-slider"
+                       aria-label="duration">
+            </md-slider>
+        </div>
+
+        <div layout>
+            <div class="routine-label">Pause: {{routine.pause}} Sek.</div>
+            <md-slider flex
+                       ng-model="routine.pause"
+                       step="1" min="1" max="20"
+                       class="routine-slider"
+                       aria-label="break">
+            </md-slider>
+        </div>
+    </md-card>
+</div>

@@ -1,26 +1,43 @@
 <div ng-controller="SettingsCtrl" layout="column">
-        <md-card class="routine-item">
-            <div class="routine-caption">Alle</div>
-            <div layout>
-                <div class="routine-label">Dauer: {{allRoutinesTime}} Sek.</div>
-                <md-slider flex
-                           ng-model="allRoutinesTime"
-                           step="1" min="15" max="90"
-                           class="routine-slider"
-                           aria-label="duration">
-                </md-slider>
-            </div>
+    <md-list>
+        <md-item ng-click="navigateTo('settings/allRoutineTimes')">
+            <md-item-content ng-click="">
+                <div class="md-tile-left">
+                    <i class="fa-clock-o fa fa-2x fa-fw settings-icon"></i>
+                </div>
+                <div class="md-tile-content">
+                    Zeiten
+                </div>
+            </md-item-content>
+            <md-divider></md-divider>
+        </md-item>
+        <md-item ng-click="navigateTo('settings/individualRoutineTimes')">
+            <md-item-content>
+                <div class="md-tile-left">
+                    <i class="fa-clock-o fa fa-2x fa-fw settings-icon"></i>
+                </div>
+                <div class="md-tile-content">
+                    Individuelle Zeiten
+                </div>
+            </md-item-content>
+            <md-divider></md-divider>
+        </md-item>
+        <md-item>
+            <md-item-content>
+                <div class="md-tile-left">
+                    <i class="fa-info fa fa-2x fa-fw settings-icon"></i>
+                </div>
+                <div class="md-tile-content">
+                    About
+                </div>
+            </md-item-content>
+            <md-divider inset></md-divider>
+        </md-item>
+    </md-list>
 
-            <div layout>
-                <div class="routine-label">Pause: {{allRoutinesPause}} Sek.</div>
-                <md-slider flex
-                           ng-model="allRoutinesPause"
-                           step="1" min="1" max="20"
-                           class="routine-slider"
-                           aria-label="break">
-                </md-slider>
-            </div>
-        </md-card>
+
+
+
         <md-card ng-repeat="routine in routines" class="routine-item" >
             <div class="routine-caption">{{routine.name}}</div>
             <div layout>
