@@ -7,23 +7,15 @@ app.controller('MainCtrl', function($scope, $mdDialog, routines, navigation) {
     navigation.leftLink = "";
     navigation.leftIcon = "";
 
-    $scope.click = function() {
-        $mdDialog.show(
-            $mdDialog.alert()
-                .content('Open Settings')
-                .ok('Ok')
-        );
-    };
+    $scope.routines = routines;
 
     $scope.startWorkout = function() {
         $mdDialog.show(
             $mdDialog.alert()
                 .content('Flap your Wings now')
-                .ok('Ok')
+                .ok('Los Gehts!')
         );
     };
-
-    $scope.routines = routines;
 
     $scope.overallTime = function(routines) {
         var result = 0;

@@ -7,14 +7,6 @@ app.controller('SettingsCtrl', function($scope, $mdDialog, routines, navigation)
     navigation.leftLink = "#/";
     navigation.leftIcon = "fa fa-2x fa-arrow-left";
 
-    $scope.click = function () {
-        $mdDialog.show(
-            $mdDialog.alert()
-                .content('Open Settings')
-                .ok('Ok')
-        );
-    };
-
     $scope.routines = routines;
 
     $scope.allRoutinesTime = 30;
