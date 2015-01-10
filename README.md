@@ -5,7 +5,7 @@ Small hybrid App that helps you doing the famous 7 minute Workout.
 This is basically a test project for me to try out ionic framework and App development in general.
 It is still under heavy development and not ready to use!
 
-If you want to have a look at the app, you find it hosted here: [Online Version](https://www.google.com "7-minute-workout-assistant")
+If you want to have a look at the app, you find it hosted here: [Online Version](http://samuba.github.io/7minute-workout-assistant/www/index.html "7-minute-workout-assistant")
 
 #### Features:
  * Adjust Workout time for each individual routine
