@@ -1,0 +1,15 @@
+<ion-view view-title="Individual Routine Times">
+    <ion-content>
+        <ion-list>
+            <ion-item ng-repeat="item in routines" ng-click="setTimesFor($index+1)">
+                {{item.name}}
+            </ion-item>
+        </ion-list>
+    </ion-content>
+
+    <script class="individual-routine-times-modal" type="text/ng-template">
+
+    </script>
+
+</ion-view>
+

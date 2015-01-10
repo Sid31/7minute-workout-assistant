@@ -1,0 +1,20 @@
+<ion-modal-view>
+    <ion-item class="item-divider title-right">{{routine.name}}</ion-item>
+    <ion-item>
+        <time-slider text="'Workout Duration:'"
+                     time="routine.duration">
+        </time-slider>
+    </ion-item>
+    <div class="divider"></div>
+    <ion-item>
+        <time-slider text="'Break Duration:'"
+                     time="routine.breakDuration"
+                     min="1" max="20">
+        </time-slider>
+    </ion-item>
+    <div class="padding">
+        <button ng-click="closeModal()" class="button button-block button-balanced">
+            Ok
+        </button>
+    </div>
+</ion-modal-view>

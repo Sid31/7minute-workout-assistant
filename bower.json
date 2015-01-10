@@ -1,16 +1,7 @@
 {
-  "name": "7minute-workout-assistant",
-  "version": "0.0.0",
-  "authors": [
-    "Samuel Bach <samuel.z.bach@gmail.com>"
-  ],
-  "main": "www/index.html",
-  "private": true,
-  "ignore": [
-    "**/.*",
-    "node_modules",
-    "bower_components",
-    "test",
-    "tests"
-  ]
+  "name": "workout-assistant",
+  "private": "true",
+  "devDependencies": {
+    "ionic": "driftyco/ionic-bower#1.0.0-beta.14"
+  }
 }

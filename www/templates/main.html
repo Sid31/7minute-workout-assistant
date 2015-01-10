@@ -1,22 +1,20 @@
-<div ng-controller="MainCtrl" class="main-view" layout="column">
-    <br><br>
-    <md-button ng-click="startWorkout()" id="start-workout-button" class="md-fab md-primary">
-        Start<br>Workout
-    </md-button>
+<ion-view view-title="7 Minute Workout Assistant">
+    <ion-nav-buttons side="right">
+        <a href="#/settings" class="button button-icon ion-gear-b"></a>
+    </ion-nav-buttons>
+    <ion-content class="padding">
+        <button ng-click="startWorkout()" class="button">Start Workout</button>
+        <div class="card">
+            <ion-item class="item-divider">Workout Plan</ion-item>
+            <ion-item>
+                <div ng-repeat="routine in routines">
+                    <b>{{routine.name}}:</b> {{routine.duration}} Seconds
+                </div>
+            </ion-item>
+            <ion-item class="item-divider">
+                Overall time: <b>{{overallTime(routines)}} Minutes</b>
+            </ion-item>
+        </div>
+    </ion-content>
+</ion-view>
 
-    <br>
-
-    <div class="routines-list-container">
-        <md-card class="routines-list">
-            <div class="workout-plan-caption">Workout Plan</div>
-            <div class="routine-item" ng-repeat="routine in routines" flex>
-                <div class="routine-name">
-                    {{$index+1}}. {{routine.name}}
-                </div> {{routine.time}} Sek.
-            </div>
-            <md-divider></md-divider><br>
-            <div class="routine-name">Gesamtzeit</div>
-            <span><b>{{overallTime(routines)}} Minuten</b></span>
-        </md-card>
-    </div>
-</div>

@@ -1,0 +1,29 @@
+<ion-modal-view>
+    <ion-content ng-controller="AllTimesCtrl">
+        <ion-item class="item-divider title-right">All Workout times</ion-item>
+        <ion-item class="text-center item-text-wrap">
+            <i class="icon ion-information padding-right" ></i>
+            <a>Changes will override your Individual Routine times</a>
+        </ion-item>
+        <ion-item>
+            <time-slider text="'Workout Duration:'"
+                         time="workoutDuration"
+                         value-changed="setAllWorkouts(workoutDuration)">
+            </time-slider>
+        </ion-item>
+        <div class="divider"></div>
+        <ion-item>
+            <time-slider text="'Break Duration:'"
+                         time="breakDuration"
+                         value-changed="setAllBreaks(breakDuration)"
+                         min="1" max="20">
+            </time-slider>
+        </ion-item>
+        <div class="padding">
+            <button ng-click="closeAllRoutineTimesModal()" class="button button-block button-balanced">
+                Ok
+            </button>
+        </div>
+    </ion-content>
+</ion-modal-view>
+
