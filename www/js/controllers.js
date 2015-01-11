@@ -3,18 +3,6 @@ angular.module('starter.controllers', [])
 .controller('MainCtrl', function($scope, routines, $ionicPopup) {
   $scope.routines = routines;
 
-  $scope.startWorkout = function() {
-
-    var msg = new SpeechSynthesisUtterance('Dieser Pferdekot ist gar nicht so lecker wie du behauptet hast. Nein, eigentlich schmeckt er sogar ganz scheusslich!');
-    msg.lang = "de-DE";
-    speechSynthesis.speak(msg);
-
-    $ionicPopup.alert({
-      title: '1 - 2 - 3 - Ready - Go',
-      template: 'Flap your <b>Wings</b> now'
-    });
-  };
-
   $scope.overallTime = function(routines) {
     var result = 0;
     for (var i in routines) {
@@ -42,6 +30,9 @@ angular.module('starter.controllers', [])
   }
 })
 
+.controller('WorkoutCtrl', function($scope, routines) {
+  $scope.routines = routines;
+})
 
 .controller('SettingsCtrl', function($scope, $ionicModal) {
   $ionicModal.fromTemplateUrl("templates/all-routine-times-modal.html", {
