@@ -7,16 +7,17 @@ angular.module('starter.directives', [])
             replace: true,
             template: '' +
                 '<div class="time-slider">' +
-                    '<label class="input-label">{{text}} <b>{{time}} Seconds</b></label>' +
+                    '<label class="input-label">{{text}} <b>{{getSetTime()}} Seconds</b></label>' +
                     '<div class="range">' +
-                        '<button ng-click="addToTime(-1)" class="button button-icon ">' +
+                        '<button ng-click="getSetTime(getSetTime() - 1)" class="button button-icon ">' +
                             '<i class="icon ion-minus"></i>' +
                         '</button>' +
                         '<input type="range"' +
                             'min="{{min}}" max="{{max}}"' +
-                            'ng-model="time"' +
-                            'ng-change="valueChanged(time)">' +
-                        '<button ng-click="addToTime(1)" class="button button-icon ">' +
+                            'ng-model="getSetTime"' +
+                            'ng-model-options="{ getterSetter: true }"' +
+                            'ng-change="valueChanged(getSetTime())">' +
+                        '<button ng-click="getSetTime(getSetTime() + 1)" class="button button-icon ">' +
                             '<i class="icon ion-plus"></i>' +
                         '</button>' +
                     '</div>' +
@@ -32,12 +33,14 @@ angular.module('starter.directives', [])
                 $scope.min = $scope.min || 10;
                 $scope.max = $scope.max || 90;
 
-                $scope.addToTime = function(num) {
-                    var result =  parseInt($scope.time) + parseInt(num);
-                    if (result >= $scope.min && result <= $scope.max) {
-                        $scope.time = result;
-                        $scope.valueChanged(result);
+                $scope.getSetTime = function(newTime) {
+                    if(angular.isDefined(newTime)) {
+                        newTime = parseInt(newTime);
+                        if(newTime >= $scope.min && newTime <= $scope.max) {
+                            $scope.time = newTime;
+                        }
                     }
+                    return $scope.time;
                 }
             }]
         }
