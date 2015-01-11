@@ -44,11 +44,11 @@
 
 .main-view .routine-list-item {
     display: inline-block;
-    width: 290px;
+    width: 309px;
 }
 
 .main-view .workout-plan {
-    max-width: 720px;
+    max-width: 650px;
 }
 
 .main-view .content-divider {
