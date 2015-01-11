@@ -1,0 +1,12 @@
+<ion-view view-title="Workout" class="workout-view">
+    <ion-content class="padding">
+        <div class="content-divider"></div>
+        <div ng-repeat="routine in routines" class="center">
+            <div ng-repeat="image in routine.images" style="height: 60vmin; width: 100%">
+                <img src="{{image}}" style="height: 100%; max-width: 35vmax;">
+            </div>
+        </div>
+        <div class="content-divider"></div>
+    </ion-content>
+</ion-view>
+
