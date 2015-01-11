@@ -1,19 +1,31 @@
-<ion-view view-title="7 Minute Workout Assistant">
+<ion-view view-title="7 Minute Workout Assistant" class="main-view">
     <ion-nav-buttons side="right">
         <a href="#/settings" class="button button-icon ion-gear-b"></a>
     </ion-nav-buttons>
     <ion-content class="padding">
-        <button ng-click="startWorkout()" class="button">Start Workout</button>
-        <div class="card">
-            <ion-item class="item-divider">Workout Plan</ion-item>
-            <ion-item>
-                <div ng-repeat="routine in routines">
-                    <b>{{routine.name}}:</b> {{routine.duration}} Seconds
-                </div>
-            </ion-item>
-            <ion-item class="item-divider">
-                Overall time: <b>{{overallTime(routines)}} Minutes</b>
-            </ion-item>
+        <div class="content-divider"></div>
+        <div class="center">
+            <button ng-click="startWorkout()"
+                    align="center"
+                    class="button start-workout-button button-balanced">
+                Start<br>Workout
+            </button>
+        </div>
+        <div class="content-divider"></div>
+        <div class="center">
+            <div class="card workout-plan">
+                <ion-item class="item-divider">Workout Plan</ion-item>
+                <ion-item class="item-text-wrap">
+                    <div class="routine-list">
+                        <div ng-repeat="routine in routines" class="routine-list-item">
+                            <b>{{$index+1}}. {{routine.name}}:</b> {{routine.duration}} Seconds
+                        </div>
+                    </div>
+                </ion-item>
+                <ion-item class="item-divider">
+                    Overall time: <b>{{overallTime(routines)}} Minutes</b>
+                </ion-item>
+            </div>
         </div>
     </ion-content>
 </ion-view>
