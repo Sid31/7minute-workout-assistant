@@ -53,11 +53,14 @@
     height: 1.9vmax;
 }
 
+.workout-view {
+    text-align: center;
+}
 
 .workout-view progress {
     margin: 0;
     width: 100%;
-    height: 18vmin;
+    height: 100%;
     display: block;
     -webkit-appearance: none;
     border: none;
@@ -73,10 +76,25 @@
     box-shadow: inset 0 1px 1px 0 rgba(255, 255, 255, 0.4);
 }
 
+.workout-view .image-container {
+    display: flex;
+}
+
+.workout-view .image-container .image {
+    height: 60vmin;
+    width: 100%
+}
+
+.workout-view .image-container .image img {
+    height: 100%;
+    max-width: 35vmax;
+}
+
 .workout-view .workout-title {
-    text-align: center;
-    font-size: 8vmin;
-    line-height: 9vmin;
-    position: absolute;
-    bottom: 0px;
+    font-size: 9vmin;
+    line-height: 10vmin;
+    float: left;
+    margin-top: 15vh;
+    margin-left: 10vmin;
+    text-align: left;
 }
