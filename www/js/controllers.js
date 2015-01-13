@@ -30,9 +30,66 @@ angular.module('starter.controllers', [])
   }
 })
 
-.controller('WorkoutCtrl', function($scope, routines) {
-  $scope.routines = routines;
+
+.controller('WorkoutCtrl', function($scope, routines, $interval, $state, $rootScope) {
+  $scope.routine = routines[0];
+  $scope.max = 0;
+  $scope.countdown = 0;
+  $scope.title = "";
+
+  $scope.cleanUp = function() {
+    $interval.cancel($scope.counter);
+  };
+
+  $scope.startWorkout = function() {
+    var i = 0;
+    $scope.routine = routines[i];
+    $scope.max = $scope.routine.duration;
+    $scope.countdown = $scope.routine.duration;
+    $scope.title = $scope.routine.name;
+
+    var breakTime = false;
+    $scope.counter = $interval(function() {
+      $scope.countdown -= 1;
+
+      if (!breakTime && $scope.countdown < 0) {
+        if(!routines.indexOf($scope.routine) == (routines.length - 1)) {
+          // routine was done. prepare for break
+          $scope.max = $scope.routine.breakDuration;
+          $scope.countdown = $scope.routine.breakDuration;
+          $scope.title = "Break";
+          breakTime = true;
+        } else {
+          // this is the last routine
+          $state.go("main");
+        }
+      } else if($scope.countdown < 0) {
+        // break is over. prepare for next routine
+        i++;
+        $scope.routine = routines[i];
+        $scope.max = $scope.routine.duration;
+        $scope.countdown = $scope.routine.duration;
+        $scope.title = $scope.routine.name;
+        breakTime = false;
+      }
+    }, 1000);
+  };
+
+  // start workout when entering view for the first time
+  $scope.startWorkout()
+
+  $rootScope.$on('$stateChangeSuccess', function(event, toState, toParams, fromState){
+    // start workout next time we enter view
+    if (toState.name === "workout") {
+      $scope.startWorkout()
+    }
+    // on exiting view we cleanup
+    if (fromState.name === "workout") {
+      $scope.cleanUp();
+    }
+  });
 })
+
 
 .controller('SettingsCtrl', function($scope, $ionicModal) {
   $ionicModal.fromTemplateUrl("templates/all-routine-times-modal.html", {
@@ -74,6 +131,7 @@ angular.module('starter.controllers', [])
   }
 })
 
+
 .controller('AllTimesCtrl', function($scope, routines) {
   $scope.workoutDuration = 30;
   $scope.breakDuration = 10;
@@ -91,7 +149,4 @@ angular.module('starter.controllers', [])
       routines[i].breakDuration = breakTime;
     }
   }
-})
-
-
-;
+});
