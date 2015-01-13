@@ -14,6 +14,8 @@ If you want to have a look at the app, you find it hosted here: [Online Version]
 #### Roadmap:
  * Routines are anounced via TTS
  * Utilize LocalStorage to persist settings
+ * Metro App
+ * Desktop App
  * Multi language support
  * Material Design for Android and Web
  * Add Advertisment
