@@ -1,13 +1,14 @@
 <ion-view view-title="Workout" class="workout-view" hide-nav-bar="true">
-    <div class="center padding">
-        <div ng-repeat="image in routine.images" style="height: 60vmin; width: 100%">
-            <img src="{{image}}" style="height: 100%; max-width: 35vmax;">
+    <div class="image-container padding">
+        <div ng-repeat="image in routine.images" class="image">
+            <img src="{{image}}">
         </div>
     </div>
     <div class="workout-title">
         {{title}} <br>
         {{countdown}} Seconds
     </div>
+
     <progress
             class="balanced row-bottom"
             max="{{max}}"
