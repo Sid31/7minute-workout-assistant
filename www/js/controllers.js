@@ -53,7 +53,7 @@ angular.module('starter.controllers', [])
       $scope.countdown -= 1;
 
       if (!breakTime && $scope.countdown < 0) {
-        if(!routines.indexOf($scope.routine) == (routines.length - 1)) {
+        if(routines.indexOf($scope.routine) != (routines.length - 1)) {
           // routine was done. prepare for break
           $scope.max = $scope.routine.breakDuration;
           $scope.countdown = $scope.routine.breakDuration;
