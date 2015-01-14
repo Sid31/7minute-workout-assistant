@@ -8,15 +8,13 @@ It is still under heavy development and not ready to use!
 If you want to have a look at the app, you find it hosted here: [Online Version](http://samuba.github.io/7minute-workout-assistant/www/index.html "7-minute-workout-assistant")
 
 #### Features:
- * Adjust Workout time for each individual routine
- * Multiplatform (Android/iOS/Web)
-
-#### Roadmap:
- * Routines are anounced via TTS
- * Utilize LocalStorage to persist settings
- * Metro App
- * Desktop App
- * Multi language support
- * Material Design for Android and Web
- * Add Advertisment
- * Make available on PlayStore
+ - [x] Adjust Workout time for each individual routine
+ - [x] Multiplatform (Android/iOS/Web)
+ - [ ] Routines are anounced via TTS
+ - [ ] Utilize LocalStorage to persist settings
+ - [ ] Metro App
+ - [ ] Desktop App
+ - [ ] Multi language support
+ - [ ] Material Design for Android and Web
+ - [ ] Make available on Stores
+ - [ ] Add Advertisment	
